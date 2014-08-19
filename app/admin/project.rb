@@ -1,4 +1,5 @@
 ActiveAdmin.register Project do
+  permit_params :name, :item_count
 
 
   # See permitted parameters documentation:
