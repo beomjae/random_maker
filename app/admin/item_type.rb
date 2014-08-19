@@ -1,4 +1,5 @@
 ActiveAdmin.register ItemType do
+  permit_params :name, :output_format
 
 
   # See permitted parameters documentation:
