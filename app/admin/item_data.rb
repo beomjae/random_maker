@@ -1,4 +1,5 @@
 ActiveAdmin.register ItemData do
+  permit_params :data
 
 
   # See permitted parameters documentation:
