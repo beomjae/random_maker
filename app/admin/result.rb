@@ -1,4 +1,5 @@
 ActiveAdmin.register Result do
+  permit_params :result_data
 
 
   # See permitted parameters documentation:
