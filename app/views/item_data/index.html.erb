@@ -1,0 +1,27 @@
+<h1>Listing item_data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_data.each do |item_datum| %>
+      <tr>
+        <td><%= item_datum.data %></td>
+        <td><%= item_datum.item %></td>
+        <td><%= link_to 'Show', item_datum %></td>
+        <td><%= link_to 'Edit', edit_item_datum_path(item_datum) %></td>
+        <td><%= link_to 'Destroy', item_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item datum', new_item_datum_path %>
