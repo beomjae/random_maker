@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
-  resources :items
+  get 'randoms' => 'randoms#index'
 
-  resources :item_data
+  get 'randoms/:id' => 'randoms#show', as: :random
+  get 'randoms/:id/pick' => 'randoms#pick', as: :pick_random
+
+  root 'projects#index'
+
+  resources :items do
+    resources :item_datas
+  end
 
   resources :item_types
+
+  resources :projects
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config

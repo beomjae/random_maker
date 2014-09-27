@@ -5,12 +5,18 @@
       <%= f.text_field :name, :class => 'text-field form-control' %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label :item_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.select(:item_type_id, options_from_collection_for_select(ItemType.all, :id, :name), {}, {:class => "form-control"}) %>
+    </div>
+  </div>
 
   <div class="form-group">
     <div class='col-md-offset-2 col-md-10'>
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  items_path, :class => 'btn btn-default' %>
+                  project_path(@item.project), :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>

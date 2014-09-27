@@ -1,0 +1,23 @@
+<h1><%= @project.name %></h1>
+<h3>Random URL : <%= link_to random_url(@project.id) ,random_url(@project.id) %></h3>
+<table class="table">
+<thead>
+	<tr>
+		<th>item name</th>
+		<th>item type</th>
+		<th>action</th>
+	</tr>
+</thead>
+<tbody>
+<% @project.items.each do | item | %>
+	<tr>
+		<td><%= item.name %></td>
+		<td><%= item.item_type.name %></td>
+		<td>
+			<%= link_to "EDIT", edit_item_path(item), class: "btn btn-primary btn-sm" %>
+			<%= link_to "DATA", item_item_datas_path(item), class: "btn btn-primary btn-sm" %>
+		</td>
+	</tr>
+<% end %>
+</tbody>
+</table>
